@@ -1,0 +1,14 @@
+# LocalStack for `make plan-local`. Dummy credentials only (test/test).
+services:
+  localstack:
+    image: localstack/localstack:3.8
+    ports:
+      - "4566:4566"
+    environment:
+      SERVICES: s3,kms,iam,sts,glue,athena
+      AWS_DEFAULT_REGION: us-east-1
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:4566/_localstack/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20

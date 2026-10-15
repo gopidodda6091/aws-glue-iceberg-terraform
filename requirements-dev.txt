@@ -1,0 +1,4 @@
+# Pinned to the Glue 5.0 runtime (Spark 3.5, Python 3.11).
+pyspark==3.5.3
+pytest==8.3.3
+ruff==0.7.4

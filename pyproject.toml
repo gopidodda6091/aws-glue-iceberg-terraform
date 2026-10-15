@@ -1,0 +1,20 @@
+[project]
+name = "aws-glue-iceberg-terraform"
+version = "0.1.0"
+description = "Glue job transform logic for the Gulf Freight Co. Iceberg lake"
+requires-python = ">=3.11,<3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "SIM", "RUF"]
+ignore = ["N812"]  # `functions as F` is the PySpark convention
+
+[tool.ruff.lint.isort]
+known-first-party = ["shipments_incremental", "generate_shipments"]
